@@ -3,9 +3,12 @@ import express from 'express';
 import { AppDataSource } from './ormconfig';
 import userRoutes from './routes/userRoutes';
 import bookRoutes from './routes/bookRoutes';
+import * as dotenv from 'dotenv';
 
 const app = express();
-const PORT = 3002;
+dotenv.config();
+
+const PORT = process.env.PORT;
 
 app.use(express.json());
 
